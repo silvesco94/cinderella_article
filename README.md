@@ -211,7 +211,7 @@ Saint Peter’s shines brightest here — especially compared to other 15-seeds:
 | Metric              | Saint Peter’s Value | Percentile vs 15-Seeds | Percentile Nationally |
 |---------------------|----------------------|--------------------------|------------------------|
 | 2P% Defense          | 44.2%               | **100th percentile**      | **98th percentile**     |
-| eFG% Defense         | —                   | **100th percentile**      | mid-90s                |
+| eFG% Defense         | 44.5%               | **100th percentile**      | mid-90s                |
 | Turnover Creation    | 20.5%               | **84th percentile**       | **82nd percentile**     |
 
 This is not normal.  
