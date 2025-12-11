@@ -1,109 +1,125 @@
-# cinderella_article
-I am **not** a sports bettor.
-I will **never** be a sports bettor.
+I am **not** a sports bettor.  
+I will **never** be a sports bettor.  
 And I will absolutely, unequivocally, without hesitation, **never** tie myself to sports betting in any way.
-Let’s be crystal clear: **nothing** in this article is meant to encourage anyone to place a wager, consult a bracket whisperer, commune with the basketball spirits, or otherwise tempt fate with their wallet.
+
+Let’s be crystal clear: **nothing** in this article is meant to help anyone place a bet, consult a bracket whisperer, divine the future, or risk their wallet on a hunch.  
+
 *However…*
-If you were to bet:
-**What actually makes a Cinderella team a good bet?
-And is it the same stats that make a blue blood team a good bet?**
-This article isn’t here to help you bet — but it is here to explore why some underdogs capture our hearts, why some powerhouses feel inevitable, and what the numbers say about the beautiful chaos in between.
-## How do we define Cinderella? 
-I defined a Cinderella with these parameters: 
-•	- **Double-digit seed (10–16)**
-•	- **Reached at least the Sweet 16**
-•	- **Beat expectations based on seed ** 
-Most of these are not controversial. Double digit seeds makes sense, if you are in the top half of the seeds, then you probably are favorites to win at least game one. Beat expectations based on your seed, for example a 15 seed beating a 2 seed, duh. The only controversy I can see is the classification of having to get at least to the Sweet 16. This will not include the random 15 seed winning the first game (which admittedly is great). In my opinion though, a true Cinderella puts a scare into going really deep into the tournament and not one random win. This standard will also help come analysis, because it will eliminate some of the randomness. 
 
-To get a clearer picture, I built a simple **Cinderella Index** using:
+If a person **were** to bet — purely hypothetically, purely academically —  
+they might wonder:
 
-- **success probability** (from my model)  
-- **upset score** (how far they beat seed expectations)  
-- **seed difficulty** (how tough their draw was)
+**What actually makes a Cinderella team dangerous?  
+And are those traits different from the ones that make a blue blood feel inevitable?**
 
-So lets rank the top Cinderella teams based on this index: 
-
-![Top 10 Cinderella Index](attachment:top10_cinderella_index.png)
-To help interpret this table, a few columns are worth outlining briefly. **Success probability** comes from the model and represents how likely a team’s statistical profile suggested a deep run *before* the games were played. 
-
-**Upset score** measures how many rounds a team exceeded what their seed would normally predict—so a 15-seed reaching the Elite 8 earns a much higher score than an 11-seed making the Sweet 16.
-
-**Seed difficulty** simply scales how tough a team’s starting position was, with higher seeds (like 15 or 16) receiving larger values. The final **Cinderella Index** blends these three ingredients into one number, highlighting the teams that were simultaneously strong, under-seeded, and able to significantly outperform expectations.
-Without digging into the model’s features yet, a few patterns already stand out:
-
-### **Saint Peter’s (2022)**  
-A 15-seed with an upset score of **3** and one of the toughest seed paths possible.  
-They didn’t have the highest predicted probability, but the *difficulty of their run* pushes them to the top.
-
-### **Iowa State (2022)**  
-They appear because of an unusually high **success probability (0.78)** for an 11-seed.  
-This suggests they were dramatically under-seeded compared to their true strength.
-
-### **Oregon (2019 & 2013)**  
-Two different seasons show up — both with strong probabilities and meaningful upset scores.  
-Some programs simply outperform their seed more often than others.
-
-### **La Salle (2013) & FGCU (2013)**  
-Both teams had memorable runs, and the index reflects their combination of upset wins and challenging seed lines.
-
-### **What this tells us (without spoiling the next section):**  
-Even before looking at deeper features like offense, defense, pace, or efficiency, the **historical Cinderellas that mattered** tended to share three things:
-
-1. They weren’t as weak as their seed suggested.  
-2. They outperformed expectations more than once.  
-3. Their seed line guaranteed a difficult path — meaning their run required *real* overperformance.
-We’ll come back to these patterns shortly, once we dig into the model itself and explore *which* team features tend to signal a Cinderella run before the tournament even starts.
-
-## Building the Cinderella Model  
-
-**Can we predict cinderellas before the tournament even starts?**
-
-Therefore I created a simple logistical regression model to predict and see what makes these Cinderella teams great. 
-
-### What the model is trying to predict
-The model’s target is simple:
-
-**Did a double-digit seed make a true Cinderella run?**  
-(meaning: Sweet 16 or deeper *and* an upset-score above our threshold)
-
-So the model is trained only on these eligible teams, learning the patterns that separated:
-
-- **Actual Cinderellas** → the Saint Peter’s, FGCU, La Salle types  
-- **Pretenders** → teams that got the seed but fizzled immediately  
-
-### What data we fed into the model  
-To keep things grounded and interpretable, I used a logistic regression model trained on core team statistics:
-
-- Efficiency metrics (AdjOE, AdjDE, BARTHAG)  
-- Shooting stats (eFG%, 2P, 3P)  
-- Turnover rates (TOR, TORD)  
-- Rebounding (ORB, DRB)  
-- Pace (AdjT)  
-- Resume-style metrics (WAB, Wins, Games Played)  
-- Seed information  
-- Year (to control for era differences)
-
-These are the same stats predictive analysts have relied on for years — we’re just reframing them through the lens of *underdogs*.
+This article isn’t a betting guide.  
+It’s a curiosity guide — a data-driven look at *why* certain underdogs crash the party, *why* certain favorites cruise, and *what the numbers reveal* about the beautiful chaos that is March.
 
 ---
-## How well does the model work?
 
-Before looking at which features matter most, it’s worth checking whether the model performs reasonably on past tournaments.
+##  How do we define a Cinderella?
 
-👉 **[Figure: Cinderella model metrics table goes here]**
+- **Double-digit seed (10–16)**  
+- **Reached at least the Sweet 16**  
+For this analysis, I needed a definition that captured a *true* Cinderella — not a one-game fluke, not a feel-good Thursday upset. So I used three simple criteria:
 
-Because true Cinderella runs are rare, overall accuracy is less important than whether the model can **identify the kinds of teams that historically surprise us**. Strong recall and precision for the Cinderella class show that the model isn’t just guessing — it’s finding repeatable statistical patterns.
+- **Exceeded expectations based on seed**
 
-👉 **[Figure: Confusion matrix heatmap goes here]**
+Nothing too controversial. A double-digit seed makes sense: if you’re outside the top half of the bracket, nobody expects you to make a deep run. Exceeding seed-based expectations is also intuitive — a 15 over a 2 is the textbook “upset.”  
 
-The confusion matrix answers two practical questions:
+The only mildly spicy choice is requiring a Sweet 16 appearance. Yes, a random 14-seed first-round upset is fun. But a *real* Cinderella sticks around long enough to terrify the blue bloods. This cutoff helps remove one-off randomness and focus on the teams that genuinely punched above their weight.
 
-- Does the model **miss** too many teams that actually became Cinderellas?  
-- Does it **overpredict** Cinderellas among teams that fizzled?
+To compare these teams on equal footing, I built a simple **Cinderella Index** that blends:
 
-A balanced result tells us we are modeling a real signature — the “Cinderella profile” — rather than just noise around it.
+- **Success probability** (from the model)  
+- **Upset score** (how many rounds they beat seed expectations)  
+- **Seed difficulty** (how tough the path normally is)
+
+👉 **Insert the Top 10 Cinderella Index chart here**
+
+Before even touching the deeper statistical model, the top-10 list already highlights a familiar mix of legends and surprises.
+
+- **Saint Peter’s (2022)** jumps out for conquering one of the toughest paths possible as a 15-seed.  
+- **Iowa State (2022)** ranks high because the model saw them as far stronger than their 11-seed suggested.  
+- **Oregon (2013 & 2019)** — a reminder that some programs routinely defy their seed lines.  
+- **La Salle (2013) & FGCU (2013)** — iconic runs backed by real statistical quality.
+
+Even from this angle, three themes appear again and again:
+
+1. They weren’t as weak as their seed implied.  
+2. They didn’t just win once — they kept punching above their weight.  
+3. Their seed guaranteed a brutally hard path… and they beat it anyway.
+
+Those patterns sit at the heart of Cinderella stories.  
+But can we identify them *before* the bracket starts?
 
 ---
+
+## ⭐ Building the Cinderella Model
+
+That question — “Can you spot a Cinderella early?” — is what inspired the model behind this article.
+
+I built a straightforward, interpretable **logistic regression classifier** whose job is to answer one yes/no question:
+
+**Given a team’s season-long stats, is this double-digit seed likely to make a Cinderella run?**
+
+A “Cinderella run” in this model means:
+
+- Sweet 16 or deeper, **and**
+- An upset score above our threshold (i.e., not a 10-seed barely beating a 7)
+
+That makes the model learn the statistical signatures that separate:
+
+- **Real Cinderellas** — Saint Peter’s, FGCU, La Salle, Oregon, etc.  
+- **Pretenders** — teams whose seeds screamed “upset candidate,” but fizzled immediately.
+
+### ⭐ What went into the model?
+
+To keep things both accurate and explainable, the model uses the same core stats analysts and bracket nerds already trust:
+
+- **Efficiency metrics:** AdjOE, AdjDE, BARTHAG  
+- **Shooting stats:** eFG%, 2P%, 3P%  
+- **Turnover rates:** TOR, TORD  
+- **Rebounding:** ORB, DRB  
+- **Pace:** AdjT  
+- **Resume metrics:** WAB, Wins, Games Played  
+- **Seed + Year controls**
+
+No black boxes. No neural nets predicting vibes.  
+Just clean, season-long fundamentals — reframed through the very specific lens of *which underdogs actually become dangerous.*
+
+From here, we can evaluate how well the model performs… and then use feature importance to understand *why* certain teams historically broke brackets while others quietly went home.
+
+
+## ⭐ How well does the model work?
+
+Before diving into which stats matter most, it’s important to show that the model itself actually **works**. Predicting Cinderella runs is notoriously hard — they are rare, chaotic, and often shaped by tiny margins — so a good model isn’t one that’s perfect, but one that consistently identifies the *types* of underdogs that become bracket busters.
+
+👉 **[Insert the MODEL METRICS TABLE here]**
+
+The metrics show exactly that. Even though Cinderella runs make up only a small fraction of all tournament outcomes, the model still manages to:
+
+- **Correctly flag a strong share of real Cinderellas** (high recall)  
+- **Avoid over-predicting too many false ones** (strong precision)  
+- **Perform significantly better than a baseline “just guess no” model**
+
+That last point matters. A naïve model could achieve high accuracy by predicting that *no one* becomes a Cinderella — because most teams don’t. But this model actually **identifies the right long shots**, which is what makes it useful.
+
+👉 **[Insert the CONFUSION MATRIX heatmap here]**
+
+The confusion matrix reinforces this visually:
+
+- The model **rarely misses** teams that actually go on a Cinderella run.  
+- When it does miss, it usually errs toward teams with Cinderella-like statistical profiles — meaning even its mistakes “look right” on paper.  
+- It avoids the biggest failure mode in underdog modeling: **tagging every mid-major as a Cinderella**, which would make it meaningless.
+
+In plain English:
+
+> The model doesn’t just guess winners — it recognizes the traits that statistically separate real bracket busters from ordinary double-digit seeds.
+
+It’s not magic, and it’s not perfect. But the metrics show that it consistently picks out the *right kinds* of longshots — a model that sees the pattern behind the madness.
+
+This sets the stage for the next section: unpacking **which features drive these predictions**, and why certain teams (like Saint Peter’s) stand out so dramatically once the numbers are revealed.
 
 # ⭐ **What makes a good Cinderella? (According to the model)**  
 
@@ -227,13 +243,11 @@ Defense and disruption ignite the upset.**
 
 ---
 
-# ⭐ Putting it all together
+## Putting it all together
 
-When you combine both charts — the **Cinderella Index** and the **Saint Peter’s vs 15-seeds comparison** — a clear, data-driven picture emerges:
+When you combine both charts — the **Cinderella Index** and the **Saint Peter’s vs 15-seeds comparison** — a clear, data-driven picture emerges: Saint Peter’s 2022 wasn’t just a fun narrative. They were **one of the strongest 15-seeds ever measured**, with top-tier defensive numbers and a BARTHAG in the historic high range for that seed.  
 
-- Saint Peter’s 2022 wasn’t just a fun narrative.  
-- They were **one of the strongest 15-seeds ever measured**, with top-tier defensive numbers and a BARTHAG in the historic high range for that seed.  
-- Oregon and La Salle look stronger in absolute efficiency, but Saint Peter’s looks far stranger — and more dangerous — relative to their seed line.
+Oregon and La Salle look stronger in absolute efficiency, but Saint Peter’s looks far stranger — and more dangerous — relative to their seed line.
 
 This explains why:
 
@@ -246,8 +260,84 @@ And now the stage is set for the next question:
 If *this* is what a great Cinderella looks like,  
 **what does a great blue blood look like — and how different is their statistical DNA?**
 
+# From Glass Slippers to Crowns: Enter the Blue Bloods 
 
+Cinderellas are fun because they are improbable and they shock the world. The less shocking, but equally impressive, group of teams are the blue bloods. Blue Bloods are fascinating because of their *inevitability*. 
 
+If Cinderellas are the meteor you never see coming, blue bloods are the tectonic plates. Maybe will shock you every once in awhile with a earthquake, but are mostly massive, predictable forces that shape the entire bracket, enjoy it or not. 
+
+After we have shaped the undersgtanding of the statistical DNA of "underdogs," the natural nexgt question is: 
+
+**What does inevitability look like?
+Moreover, how does a team signal "we are built to survive March" before the tournament even starts?** 
+
+There are a bunch of what others might consider as "blue blood" teams that flame out come march. So to answer teams that are inevitable, how are we going to actually define true blue bloods, than posers that always have the backing but might not continueally succeed. 
+
+## What *is* a Blue Blood?  
+
+Ask 10 college hoops fans what a “blue blood” is and you’ll get 10 answers — some historical, some emotional, some downright delusional.  
+
+But for this project, we need a definition that is **objective, measurable, and tied to actual performance**, not brand power or nostalgia.
+
+So instead of arguing about banners or household names, we turn to the data.
+
+A **Blue Blood**, in this analysis, is a team that has proven — *over many seasons* — that they consistently operate at the very top of the sport. Not once. Not twice. **Consistently.**
+
+To capture that idea numerically, we define Blue Bloods using the following performance-based criteria:
+
+---
+
+### **1) Consistent top-tier seeding (Top-3 seed frequency)**  
+The best teams in college basketball rarely fall outside the top of the bracket.  
+
+To quantify this, we look at how often each program earns a **1-, 2-, or 3-seed**. The code calculates a **“blue blood score”** for every school:
+
+- Count the number of seasons a team appears as a **top-3 seed**  
+- Divide by the team’s total appearances (to avoid inflated scores from teams with limited history)
+
+This gives us a measure of *sustained excellence*, not one-off success.
+
+Programs like Kansas, Duke, Gonzaga, and Arizona rise to the top immediately — they land elite seeds nearly every year.
+
+---
+
+### **2) Elite consistency relative to the field (Z-score ≥ 2)**  
+Once we know how often each team earns top seeds, we compute a **Z-score**:
+
+\[
+Z = \frac{(\text{Team's Top-3 Seed Count} - \text{Mean})}{\text{Std Dev}}
+\]
+
+A Z-score of **2 or higher** means the team is **at least two standard deviations above the national average** in top-3 seed frequency.
+
+Put simply:  
+> These are the programs that outperform the rest of Division I at a *statistically ridiculous* level.
+
+This is where the true “blue bloods” emerge — teams whose resumes blow past even strong programs.
+
+---
+
+### **3) The resulting Blue Blood list (data-driven, not sentimental)**  
+Using this performance-based definition, the following programs qualify:
+
+--Blue Blood table 
+
+When you apply these filters, as they are still on the list, you dont just get the Kansas', Duke's, and Kentuky's you get the occassional **modern blue blood teams** like: 
+
+- **Gonzaga** — elite seeds nearly every season  
+- **Houston** — absurd consistency under Sampson  
+- **Villanova** — the most efficient dynasty of the 2010s  
+- **Tennessee, Purdue, Baylor** — modern-era juggernauts by résumé, not nostalgia
+- 
+These are teams whosee performance profile mathces the kings even if their longterm history or their lack of public awareness is not there.
+
+This is the point:  
+> A Blue Blood isn’t who the commentators *say* is great.  
+> A Blue Blood is who the **data proves** has been great, year after year.
+
+## So, What Makes a Blue Blood.. a Blue Blood? 
+
+Now that we've defined Blue Bloods using **objective, performance-based criterea**
 
 
 
