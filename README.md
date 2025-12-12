@@ -25,7 +25,10 @@ This article isn’t a betting guide.
 It’s a curiosity guide — a data-driven look at *why* certain underdogs crash the party, *why* certain favorites cruise, and *what the numbers reveal* about the beautiful chaos that is March.
 
 ---
+## Data Description:  
+This dataset contains season-level NCAA Division I men’s basketball team statistics from **2002–2024**, used to analyze March Madness outcomes. It includes efficiency metrics (AdjOE, AdjDE, BARTHAG), shooting and turnover rates, rebounding measures, pace, résumé indicators, and tournament seeding. The data supports modeling and comparison of Cinderella runs and Blue Blood consistency by examining how team strength, mis-seeding, and defensive reliability relate to deep tournament performance.
 
+--- 
 ##  How do we define a Cinderella?
 
 - **Double-digit seed (10–16)**  
