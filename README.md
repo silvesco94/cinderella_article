@@ -35,7 +35,7 @@ To compare these teams on equal footing, I built a simple **Cinderella Index** t
 - **Upset score** (how many rounds they beat seed expectations)  
 - **Seed difficulty** (how tough the path normally is)
 
-👉 **Insert the Top 10 Cinderella Index chart here**
+![Top 10 Cinderella Index](top_ten_cinderella_index_chart.jpg) 
 
 Before even touching the deeper statistical model, the top-10 list already highlights a familiar mix of legends and surprises.
 
@@ -55,7 +55,7 @@ But can we identify them *before* the bracket starts?
 
 ---
 
-## ⭐ Building the Cinderella Model
+## Building the Cinderella Model
 
 That question — “Can you spot a Cinderella early?” — is what inspired the model behind this article.
 
@@ -73,7 +73,7 @@ That makes the model learn the statistical signatures that separate:
 - **Real Cinderellas** — Saint Peter’s, FGCU, La Salle, Oregon, etc.  
 - **Pretenders** — teams whose seeds screamed “upset candidate,” but fizzled immediately.
 
-### ⭐ What went into the model?
+### What went into the model?
 
 To keep things both accurate and explainable, the model uses the same core stats analysts and bracket nerds already trust:
 
@@ -91,11 +91,11 @@ Just clean, season-long fundamentals — reframed through the very specific lens
 From here, we can evaluate how well the model performs… and then use feature importance to understand *why* certain teams historically broke brackets while others quietly went home.
 
 
-## ⭐ How well does the model work?
+##  How well does the model work?
 
 Before diving into which stats matter most, it’s important to show that the model itself actually **works**. Predicting Cinderella runs is notoriously hard — they are rare, chaotic, and often shaped by tiny margins — so a good model isn’t one that’s perfect, but one that consistently identifies the *types* of underdogs that become bracket busters.
 
-👉 **[Insert the MODEL METRICS TABLE here]**
+![Cinderella Model Metrics](cinderella_model_metrics.jpg)
 
 The metrics show exactly that. Even though Cinderella runs make up only a small fraction of all tournament outcomes, the model still manages to:
 
@@ -105,7 +105,7 @@ The metrics show exactly that. Even though Cinderella runs make up only a small 
 
 That last point matters. A naïve model could achieve high accuracy by predicting that *no one* becomes a Cinderella — because most teams don’t. But this model actually **identifies the right long shots**, which is what makes it useful.
 
-👉 **[Insert the CONFUSION MATRIX heatmap here]**
+![Cinderella Confusion Matrix](cinderella_confusion_matrix.jpg)
 
 The confusion matrix reinforces this visually:
 
@@ -121,17 +121,17 @@ It’s not magic, and it’s not perfect. But the metrics show that it consisten
 
 This sets the stage for the next section: unpacking **which features drive these predictions**, and why certain teams (like Saint Peter’s) stand out so dramatically once the numbers are revealed.
 
-# ⭐ **What makes a good Cinderella? (According to the model)**  
+#  **What makes a good Cinderella? (According to the model)**  
 
 We begin with the **Top 10 Cinderella Index chart**, which blends strength, upset performance, and path difficulty.
 
-👉 **[Figure: Top 10 Cinderella Index chart goes here]**
+![Top 10 Cinderella Index](top_ten_cinderella_index_chart.jpg)
 
 At first glance, Saint Peter’s (2022) may look lower than teams like Oregon or La Salle. But the Index blends *several* components. Oregon and La Salle rate higher because they entered the tournament with elite efficiency metrics. Saint Peter’s did not look like an Oregon-level juggernaut — but **relative to other 15-seeds**, they were something close to unprecedented. They are the top Cinderella team, not because their stats were emensly better than other teams that were cinderellas, but in comparison to people in their own seed. Remember Oregon and the other teams were higher seeds to start with, 15 was certainly an underseeded team, and this next section will prove that. 
 
 To understand this deeper, we zoom in to compare Saint Peter's in comparison to all other 15 seeds in the dataset. 
 
-👉 **[Figure: Saint Peter’s vs. all 15-seeds percentile comparison chart here]**
+![Saint Peter’s vs 15-seeds](st_peters_vs_15_seed.jpg)
 
 This chart makes it clear why the model viewed Saint Peter’s as extraordinary **within their seed line**, even if they weren’t as strong as the top Cinderella teams overall.
 
@@ -346,13 +346,15 @@ To do this, I fit a second **logistic regression model**, parallel to the Cinder
 Where the Cinderella model looked for **volatility and upside**,  
 the Blue Blood model looks for **stability and sustained dominance**.
 
+**Who are the blue Bloods?**
+![Blue Blood List](blue_blood_list.jpg)
 ---
 
-## ⭐ Model Performance: Can We Actually Predict Blue Blood Success?
+## Model Performance: Can We Actually Predict Blue Blood Success?
 
 Before interpreting what makes elite teams elite, we first need to establish that the model itself is doing something meaningful. Predicting deep March runs is difficult even among top seeds — every year, multiple No. 1 and No. 2 seeds exit far earlier than expected. Simply being “highly ranked” is not enough.
 
-👉 **[Insert Blue Blood Model Metrics Table here]**
+![Blue Blood Model Metrics](bb_metrics_table.jpg)
 
 Despite that volatility, the model shows strong and credible performance:
 
@@ -362,7 +364,7 @@ Despite that volatility, the model shows strong and credible performance:
 
 Crucially, these results are **far stronger than a naïve baseline**, such as labeling all No. 1 seeds as inevitable or assuming seed alone determines success. The model is not just echoing the bracket — it is learning which elite profiles actually translate to March survival.
 
-👉 **[Insert Blue Blood Confusion Matrix here]**
+![Blue Blood Confusion Matrix](confusion_matrix_bb.jpg)
 
 The confusion matrix reinforces this interpretation:
 
@@ -383,7 +385,7 @@ This validation allows us to move forward with confidence — not to speculate, 
 
 With the model validated, we turn to **feature importance** — the same lens used for Cinderellas — to understand *why* Blue Bloods historically dominate.
 
-👉 **[Insert Blue Blood Feature Importance Chart here]**
+![Blue Blood Feature Importance](blue_blood_feature_importance.jpg)
 
 Several traits dominate this model even more strongly than they did in the Cinderella world.
 
@@ -396,7 +398,8 @@ the same metric explains the opposite for Blue Bloods:
 
 **Elite teams aren’t just good — they live in a statistical neighborhood most teams never visit.**
 
-👉 **[Insert BARTHAG Efficiency Distribution Chart: Blue Bloods vs. All D1 Teams]**
+![BARTHAG Efficiency Distribution](barthag_efficiency_dist_chart.jpg)
+
 
 The chart makes this immediately clear:
 
@@ -487,7 +490,7 @@ A true Blue Blood — the kind that behaves like a Final Four machine — is a t
 - **Protects possessions** and **controls the glass**  
 - Earns top seeds **year after year**
 
-# ⭐ Two Paths Through March: How Blue Bloods and Cinderellas Differ (and Overlap)
+## Two Paths Through March: How Blue Bloods and Cinderellas Differ (and Overlap)
 
 After building two parallel models — one for the underdogs and one for the giants — we can finally answer the question that started this entire project:
 
@@ -503,9 +506,9 @@ Let’s break it down.
 
 ---
 
-## ⭐ 1. BARTHAG: Strength Matters for Both — But for Opposite Reasons
+##  1. BARTHAG: Strength Matters for Both — But for Opposite Reasons
 
-👉 **[Insert Combined BARTHAG Comparison Chart: Cinderellas vs. Blue Bloods vs. All Teams]**
+![Combined BARTHAG](combined_barthag.jpg)
 
 - **Blue Bloods** live in a narrow band around **0.90–0.97**, operating with machine-like consistency.  
 - **Cinderellas**, in contrast, often sit in the **0.70–0.85** range — strong for their seed, but nowhere near elite in absolute terms.
@@ -560,7 +563,7 @@ Defense doesn’t just “travel” in March.
 
 ### 3. Shot Quality as a Separator: What the Data Shows
 
-👉 **[Figure: Shot Quality Scatter — Offensive eFG% vs Defensive eFG% (Cinderellas vs Blue Bloods vs All Teams) goes here]**
+![Shot Quality Scatter](shot_quality_scatter.jpg)
 
 This chart compares **offensive shot quality (Offensive eFG%)** against **defensive shot suppression (Defensive eFG% allowed)** across three groups: all Division I teams, Cinderella teams, and Blue Blood programs.
 
@@ -584,7 +587,7 @@ Or, more poetically:
 
 ## ⭐ 4. Chaos: Control vs Opportunity (What the Averages Show)
 
-👉 **[Insert Turnover Rate + Defensive Rebounding Group Averages Chart]**
+![Turnovers & Rebounding](TOR_rebounding.jpg)
 
 This chart compares **average possession-control metrics** across all teams, Blue Bloods, and Cinderellas. While it does not capture game-to-game volatility, it does reveal how each group typically approaches chaos over the course of a season.
 
