@@ -131,7 +131,7 @@ At first glance, Saint Peter’s (2022) may look lower than teams like Oregon or
 
 To understand this deeper, we zoom in to compare Saint Peter's in comparison to all other 15 seeds in the dataset. 
 
-![Saint Peter’s vs 15-seeds](st_peters_vs_15_seed.jpg)
+![Saint Peter’s vs 15-seeds](st_peters_vs_15_seed.png)
 
 This chart makes it clear why the model viewed Saint Peter’s as extraordinary **within their seed line**, even if they weren’t as strong as the top Cinderella teams overall.
 
@@ -347,7 +347,9 @@ Where the Cinderella model looked for **volatility and upside**,
 the Blue Blood model looks for **stability and sustained dominance**.
 
 **Who are the blue Bloods?**
+
 ![Blue Blood List](blue_blood_list.jpg)
+
 ---
 
 ## Model Performance: Can We Actually Predict Blue Blood Success?
@@ -385,7 +387,7 @@ This validation allows us to move forward with confidence — not to speculate, 
 
 With the model validated, we turn to **feature importance** — the same lens used for Cinderellas — to understand *why* Blue Bloods historically dominate.
 
-![Blue Blood Feature Importance](blue_blood_feature_importance.jpg)
+![Blue Blood Feature Importance](blue_blood_feature_importance.png)
 
 Several traits dominate this model even more strongly than they did in the Cinderella world.
 
@@ -398,7 +400,7 @@ the same metric explains the opposite for Blue Bloods:
 
 **Elite teams aren’t just good — they live in a statistical neighborhood most teams never visit.**
 
-![BARTHAG Efficiency Distribution](barthag_efficiency_dist_chart.jpg)
+![BARTHAG Efficiency Distribution](barthag_efficiency_dist_chart.png)
 
 
 The chart makes this immediately clear:
@@ -508,7 +510,7 @@ Let’s break it down.
 
 ##  1. BARTHAG: Strength Matters for Both — But for Opposite Reasons
 
-![Combined BARTHAG](combined_barthag.jpg)
+![Combined BARTHAG](combined_barthag.png)
 
 - **Blue Bloods** live in a narrow band around **0.90–0.97**, operating with machine-like consistency.  
 - **Cinderellas**, in contrast, often sit in the **0.70–0.85** range — strong for their seed, but nowhere near elite in absolute terms.
@@ -529,7 +531,7 @@ Cinderellas succeed because they’re better than almost everyone **at their see
 ---
 ##  2. Defense: The Great Separator (What the Data Actually Shows)
 
-👉 **[Insert Defense Comparison Chart: AdjDE and Defensive eFG%]**
+![Defensive_Comparison](defensive_comparison.png) 
 
 Defense emerges as one of the most important variables in both models — but not because Cinderellas and Blue Bloods occupy entirely different defensive ranges.
 
@@ -563,7 +565,7 @@ Defense doesn’t just “travel” in March.
 
 ### 3. Shot Quality as a Separator: What the Data Shows
 
-![Shot Quality Scatter](shot_quality_scatter.jpg)
+![Shot Quality Scatter](shot_quality_scatter.png)
 
 This chart compares **offensive shot quality (Offensive eFG%)** against **defensive shot suppression (Defensive eFG% allowed)** across three groups: all Division I teams, Cinderella teams, and Blue Blood programs.
 
@@ -587,7 +589,7 @@ Or, more poetically:
 
 ## ⭐ 4. Chaos: Control vs Opportunity (What the Averages Show)
 
-![Turnovers & Rebounding](TOR_rebounding.jpg)
+![Turnovers & Rebounding](TOR_rebounding.png)
 
 This chart compares **average possession-control metrics** across all teams, Blue Bloods, and Cinderellas. While it does not capture game-to-game volatility, it does reveal how each group typically approaches chaos over the course of a season.
 
