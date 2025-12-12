@@ -613,10 +613,42 @@ Upsets don’t come from constant disorder.
 They come when a temporary swing in possessions collides with a favorite that cannot fully absorb it.
 
 
+## Conclusion: What Actually Matters (and Why Context Is Everything)
 
-## Conclusion 
+If you made it this far, the conclusion may feel almost frustratingly simple.
 
-Annoyingly, you just read this whole article for me to make one point. Yes, there are other factors in which a person looking for a cinderella and a blue blood could look. Things like defensive efficiency, 2 point defens, turnovers are certainly good signs. But really, the true takeaway is that KenPom is still the best, and really the best way to establish the strength of the team is BARTHAG. Really, take a look at this stat and you cannot go wrong. 
+Yes — there are many traits that correlate with March success.  
+Defense matters. Shot quality matters. Turnovers matter. Rebounding matters.  
+
+But across every model, every chart, and every historical run examined here, one signal consistently rises above the rest:
+
+**BARTHAG remains the strongest single summary of team quality in college basketball.**
+
+That doesn’t mean BARTHAG predicts everything.  
+It doesn’t pick exact upsets.  
+It doesn’t eliminate randomness.  
+
+What it does — better than any other metric — is establish *who a team actually is* before the ball is tipped.
+
+The key insight from this analysis isn’t “just look at BARTHAG and you’re done.”  
+It’s this:
+
+> **BARTHAG means different things for different teams.**
+
+- For **Blue Bloods**, elite BARTHAG reflects inevitability — teams whose baseline strength is high enough to survive variance.
+- For **Cinderellas**, elevated BARTHAG is a warning sign — evidence of a team that is *far stronger than its seed implies*.
+
+March chaos doesn’t come from randomness alone.  
+It comes from **misalignment** — between perception and reality, seed and strength, expectation and capability.
+
+This project wasn’t about finding a cheat code or predicting the bracket.  
+It was about understanding *why* certain teams feel dangerous before they ever pull the upset — and *why* certain favorites feel inevitable even when the bracket screams chaos.
+
+And if there’s one takeaway worth keeping, it’s this:
+
+> **Upsets don’t come from nowhere.  
+> They come from teams that were quietly stronger than we were willing to admit.**
+
 
 
 
