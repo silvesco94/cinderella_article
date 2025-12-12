@@ -1,5 +1,11 @@
+[⬅️ Back to War Games](https://silvesco94.github.io/war_games/)
+
+
 # Chaos and Control: What the Numbers Reveal About March Madness
-*By Scott Silverstein*
+## By Scott Silverstein
+
+![pic](pic.jpg) 
+
 
 I am **not** a sports bettor.  
 I will **never** be a sports bettor.  
