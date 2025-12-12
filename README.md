@@ -1,3 +1,6 @@
+# Chaos and Control: What the Numbers Reveal About March Madness
+*By Scott Silverstein*
+
 I am **not** a sports bettor.  
 I will **never** be a sports bettor.  
 And I will absolutely, unequivocally, without hesitation, **never** tie myself to sports betting in any way.
@@ -393,7 +396,7 @@ Several traits dominate this model even more strongly than they did in the Cinde
 
 ---
 
-### 🔹 1. BARTHAG (Overall Strength) — The Pillar of Inevitability
+### 1. BARTHAG (Overall Strength) — The Pillar of Inevitability
 
 If BARTHAG helped explain why Saint Peter’s was *exceptional for a 15-seed*,  
 the same metric explains the opposite for Blue Bloods:
@@ -430,7 +433,7 @@ Put simply:
 
 ---
 
-### 🔹 2. AdjDE (Defensive Efficiency) — The Great Separator
+### 2. AdjDE (Defensive Efficiency) — The Great Separator
 
 If Cinderella success is driven by chaos creation,  
 Blue Blood success is driven by **chaos prevention**.
@@ -450,7 +453,7 @@ And in March, avoiding disaster is half the battle.
 
 ---
 
-### 🔹 3. Shooting Quality (Offensive & Defensive eFG%) — Consistency Insurance
+### 3. Shooting Quality (Offensive & Defensive eFG%) — Consistency Insurance
 
 Top seeds don’t flame out because they “get cold.”  
 They flame out because they take **bad shots** or allow **good ones**.
@@ -465,7 +468,7 @@ Blue Blood success = **shot quality control**.
 
 ---
 
-### 🔹 4. Low Turnovers & Strong Defensive Rebounding — Killing Chaos
+### 4. Low Turnovers & Strong Defensive Rebounding — Killing Chaos
 
 Where Cinderellas often *benefit* from disorder,  
 Blue Bloods work relentlessly to **eliminate it**.
@@ -587,7 +590,7 @@ Or, more poetically:
 > **Cinderellas break the bracket.  
 > Blue Bloods define the bracket.**
 
-## ⭐ 4. Chaos: Control vs Opportunity (What the Averages Show)
+## 4. Chaos: Control vs Opportunity (What the Averages Show)
 
 ![Turnovers & Rebounding](TOR_rebounding.png)
 
