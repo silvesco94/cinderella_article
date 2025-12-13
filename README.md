@@ -167,7 +167,7 @@ This sets the stage for the next section: unpacking **which features drive these
 
 # What Makes a Good Cinderella? (According to the Model)
 
-Now that we’ve identified *who* the Cinderella teams are, the next step is understanding *what actually makes a Cinderella team*. To do that, we turn to the **feature importance** of the final Cinderella model — the model we are actually using, not the fraud-style framing.
+Now that we’ve identified *who* the Cinderella teams are, the next step is understanding *what actually makes a Cinderella team*. To do that, we turn to the **feature importance** of the final Cinderella model.
 
 ![Cinderella Feature](feature_importance_cinderella.png)
 
